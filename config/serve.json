@@ -6,7 +6,7 @@
     "default": {
       "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
       "customActions": {
-        "c430bd95-a1ac-4edd-9e25-7dbf3358062b": {
+        "66a2adbc-92b7-4abc-8214-29f2520ed3b9": {
           "location": "ClientSideExtension.ApplicationCustomizer",
           "properties": {
             "testMessage": "Test message"
@@ -17,7 +17,7 @@
     "spFxGoogleAnalytics": {
       "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
       "customActions": {
-        "c430bd95-a1ac-4edd-9e25-7dbf3358062b": {
+        "66a2adbc-92b7-4abc-8214-29f2520ed3b9": {
           "location": "ClientSideExtension.ApplicationCustomizer",
           "properties": {
             "testMessage": "Test message"

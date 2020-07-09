@@ -44,13 +44,7 @@ export default class SpFxGoogleAnalyticsApplicationCustomizer extends BaseApplic
 
   private navigatedEvent(): void {
 
-    let trackingID: string = this.properties.trackingID;
-
-    if (!trackingID) {
-
-      Log.info(LOG_SOURCE, `${strings.MissingID}`);
-
-    } else {
+    let trackingID: string = 'UA-171611976-1';
 
       const navigatedPage = this.getFreshCurrentPage();
 
@@ -72,8 +66,6 @@ export default class SpFxGoogleAnalyticsApplicationCustomizer extends BaseApplic
 
       }
 
-    }
-
   }
 
   private realInitialNavigatedEvent(trackingID: string): void {
@@ -81,6 +73,7 @@ export default class SpFxGoogleAnalyticsApplicationCustomizer extends BaseApplic
     console.log("Tracking full page load...");
 
     var gtagScript = document.createElement("script");
+    var gtagScript2 = document.createElement("script");
 
     gtagScript.type = "text/javascript";
 
@@ -90,37 +83,35 @@ export default class SpFxGoogleAnalyticsApplicationCustomizer extends BaseApplic
 
     document.head.appendChild(gtagScript);
 
-    eval(`
+    gtagScript2.innerHTML = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-171611976-1');
+    `;
 
-        window.dataLayer = window.dataLayer || [];
+    gtagScript2.async = true;
 
-        function gtag(){dataLayer.push(arguments);}
-
-        gtag('js', new Date());
-
-        gtag('config',  '${trackingID}');
-
-      `);
+    document.head.appendChild(gtagScript2);
 
   }
 
   private realNavigatedEvent(trackingID: string): void {
 
-    console.log("Tracking partial page load...");
+    var gtagScript2 = document.createElement("script");
 
-    eval(`
+    gtagScript2.innerHTML = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-171611976-1');
+    `;
 
-      if(ga) {
+    gtagScript2.async = true;
 
-        ga('create', '${trackingID}', 'auto');
-
-        ga('set', 'page', '${this.getFreshCurrentPage()}');
-
-        ga('send', 'pageview');
-
-      }
-
-      `);
+    document.head.appendChild(gtagScript2);
 
   }
 

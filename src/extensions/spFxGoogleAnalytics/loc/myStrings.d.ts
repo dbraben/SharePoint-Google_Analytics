@@ -1,6 +1,6 @@
 declare interface ISpFxGoogleAnalyticsApplicationCustomizerStrings {
   Title: string;
-  MissingID: "Tracking ID missing";
+  MissingID: "UA-171611976";
 }
 
 declare module 'SpFxGoogleAnalyticsApplicationCustomizerStrings' {
