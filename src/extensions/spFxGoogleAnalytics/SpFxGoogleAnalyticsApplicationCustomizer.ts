@@ -44,7 +44,7 @@ export default class SpFxGoogleAnalyticsApplicationCustomizer extends BaseApplic
 
   private navigatedEvent(): void {
 
-    let trackingID: string = 'UA-171611976-1';
+    let trackingID: string = 'GoogleAnalyticsID';
 
       const navigatedPage = this.getFreshCurrentPage();
 
@@ -88,7 +88,7 @@ export default class SpFxGoogleAnalyticsApplicationCustomizer extends BaseApplic
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
     
-      gtag('config', 'UA-171611976-1');
+      gtag('config', 'GoogleAnalyticsID');
     `;
 
     gtagScript2.async = true;
@@ -106,7 +106,7 @@ export default class SpFxGoogleAnalyticsApplicationCustomizer extends BaseApplic
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
     
-      gtag('config', 'UA-171611976-1');
+      gtag('config', 'GoogleAnalyticsID');
     `;
 
     gtagScript2.async = true;

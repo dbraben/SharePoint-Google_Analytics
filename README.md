@@ -1,6 +1,6 @@
 ## sp-fx-google-analytics
 
-This is where you include your WebPart documentation.
+Replace the GoogleAnalyticsID within the code with your Google Analytic tacking ID i.e. UA-1234567-01.
 
 ### Building the code
 
@@ -8,7 +8,6 @@ This is where you include your WebPart documentation.
 git clone the repo
 npm i
 npm i -g gulp
-gulp
 ```
 
 This package produces the following:
